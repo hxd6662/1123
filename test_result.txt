@@ -1,0 +1,36 @@
+============================================================
+Testing Doubao Vision Model
+============================================================
+API Key: 8f8f68b5-5c65-41bf-b...
+Base URL: https://ark.cn-beijing.volces.com/api/v3
+Model: doubao-seed-1-6-vision-250815
+
+Step 1: Initializing OpenAI client...
+Client initialized successfully
+
+Step 2: Preparing test input...
+Test input ready
+
+Step 3: Calling Doubao Vision API...
+Please wait for response...
+
+============================================================
+API call successful!
+============================================================
+
+Raw response:
+------------------------------------------------------------
+Response(id='resp_0217755853234823db2ae4cfc3568c4e16a3f1d8439c3733b53ce', created_at=1775585324.0, error=None, incomplete_details=None, instructions=None, metadata=None, model='doubao-seed-1-6-vision-250815', object='response', output=[ResponseReasoningItem(id='rs_02177558532429100000000000000000000ffffac15e1baf53fc5', summary=[Summary(text='用户现在需要分析这个输入输出的表格，首先看表格的结构，模型系列、输入（文本、图片、视频）、输出（文本、图片、视频），还有每个模型的支持情况。首先看每个模型的输入输出支持情况：\n\n首先看模型系列：Doubao-Seed-1.8、DeepSeek-V3.2、GLM-4.7。\n\n输入部分：\n- 文本输入：三个模型都是√，都支持文本输入。\n- 图片输入：Doubao-Seed-1.8是√，支持；DeepSeek-V3.2和GLM-4.7是×，不支持。\n- 视频输入：Doubao-Seed-1.8是√，支持；另外两个是×，不支持。\n\n输出部分：\n- 文本输出：三个模型都是√，支持文本输出。\n- 图片输出：三个模型都是×，不支持。\n- 视频输出：三个模型都是×，不支持。\n\n然后总结每个模型的输入输出能力：\n- Doubao-Seed-1.8：输入支持文本、图片、视频；输出支持文本，不支持图片、视频。\n- DeepSeek-V3.2：输入只支持文本，图片、视频不支持；输出只支持文本，图片、视频不支持。\n- GLM-4.7：和DeepSeek-V3.2类似，输入只文本，输出只文本，图片视频输入输出都不支持。\n\n另外，表格的说明是√支持，×不支持。所以从表格中可以看出不同模型在输入（文本、图片、视频）和输出（文本、图片、视频）上的支持情况，方便根据业务的输入输出需求筛选模型。比如如果业务需要输入图片或视频，只有Doubao-Seed-1.8支持；如果输入输出都是文本，三个模型都支持，但如果有图片视频输入需求，就只能选Doubao-Seed-1.8。\n\n现在整理一下观察到的内容：\n\n这是一个关于不同模型系列输入输出支持情况的表格，用于根据业务的输入输出需求筛选模型。表格包含“模型系列”、“输入”（分文本、图片、视频）、“输出”（分文本、图片、视频）列，用√表示支持，×表示不支持。\n\n各模型的支持情况：\n- 模型系列Doubao - Seed - 1.8：输入支持文本、图片、视频（均为√）；输出支持文本（√），不支持图片、视频（均为×）。\n- 模型系列DeepSeek - V3.2：输入仅支持文本（√），图片、视频不支持（×）；输出仅支持文本（√），图片、视频不支持（×）。\n- 模型系列GLM - 4.7：输入仅支持文本（√），图片、视频不支持（×）；输出仅支持文本（√），图片、视频不支持（×）。\n\n总结来说，Doubao - Seed - 1.8在输入方面支持更多类型（文本、图片、视频），而三个模型的输出都只支持文本，不支持图片和视频输出。用户可以根据业务需要的输入（文本/图片/视频）和输出（文本/图片/视频）类型，从这三个模型中筛选合适的，比如需要处理图片或视频输入的业务，只有Doubao - Seed - 1.8可选；若仅需文本输入输出，三个模型都可考虑。', type='summary_text')], type='reasoning', content=None, encrypted_content=None, status='completed'), ResponseOutputMessage(id='msg_02177558533857400000000000000000000ffffac15e1ba94be5b', content=[ResponseOutputText(annotations=None, text='这是一个**模型输入输出支持情况的筛选表格**，用于根据业务的输入输出需求选择合适模型，规则为“√=支持，×=不支持”。表格从「模型系列」「输入（文本/图片/视频）」「输出（文本/图片/视频）」三个维度展示能力：  \n\n\n### 1. 模型系列的输入输出能力  \n| 模型系列        | 输入（文本/图片/视频） | 输出（文本/图片/视频） |  \n|-----------------|------------------------|------------------------|  \n| Doubao-Seed-1.8 | 文本√、图片√、视频√    | 文本√、图片×、视频×    |  \n| DeepSeek-V3.2   | 文本√、图片×、视频×    | 文本√、图片×、视频×    |  \n| GLM-4.7         | 文本√、图片×、视频×    | 文本√、图片×、视频×    |  \n\n\n### 2. 核心观察结论  \n- **输入差异**：只有 `Doubao-Seed-1.8` 支持**图片、视频输入**；`DeepSeek-V3.2` 和 `GLM-4.7` 仅支持**文本输入**。  \n- **输出共性**：所有模型都只支持**文本输出**，均不支持图片、视频输出。  \n\n\n### 3. 筛选逻辑（业务场景参考）  \n- 若业务需要**处理图片/视频输入**（如多模态内容理解），仅 `Doubao-Seed-1.8` 可选。  \n- 若业务仅需**文本输入+文本输出**（如文案生成、问答），三个模型均可考虑，但 `Doubao-Seed-1.8` 额外支持图片/视频输入（未来可扩展多模态场景）。  \n\n\n通过表格可快速匹配“输入类型（文本/图片/视频）”和“输出类型（文本/图片/视频）”的业务需求，选择支持对应能力的模型。', type='output_text', logprobs=None)], role='assistant', status='completed', type='message', phase=None)], parallel_tool_calls=None, temperature=None, tool_choice=None, tools=None, top_p=None, background=None, completed_at=None, conversation=None, max_output_tokens=32768, max_tool_calls=None, previous_response_id=None, prompt=None, prompt_cache_key=None, prompt_cache_retention=None, reasoning=None, safety_identifier=None, service_tier='default', status='completed', text=None, top_logprobs=None, truncation=None, usage=ResponseUsage(input_tokens=1374, input_tokens_details=InputTokensDetails(cached_tokens=0), output_tokens=1209, output_tokens_details=OutputTokensDetails(reasoning_tokens=762), total_tokens=2583), user=None, caching={'type': 'disabled'}, store=True, expire_at=1775844523)
+------------------------------------------------------------
+
+Parsed output:
+------------------------------------------------------------
+Output 1:
+  Content: None
+Output 2:
+  Content: [ResponseOutputText(annotations=None, text='这是一个**模型输入输出支持情况的筛选表格**，用于根据业务的输入输出需求选择合适模型，规则为“√=支持，×=不支持”。表格从「模型系列」「输入（文本/图片/视频）」「输出（文本/图片/视频）」三个维度展示能力：  \n\n\n### 1. 模型系列的输入输出能力  \n| 模型系列        | 输入（文本/图片/视频） | 输出（文本/图片/视频） |  \n|-----------------|------------------------|------------------------|  \n| Doubao-Seed-1.8 | 文本√、图片√、视频√    | 文本√、图片×、视频×    |  \n| DeepSeek-V3.2   | 文本√、图片×、视频×    | 文本√、图片×、视频×    |  \n| GLM-4.7         | 文本√、图片×、视频×    | 文本√、图片×、视频×    |  \n\n\n### 2. 核心观察结论  \n- **输入差异**：只有 `Doubao-Seed-1.8` 支持**图片、视频输入**；`DeepSeek-V3.2` 和 `GLM-4.7` 仅支持**文本输入**。  \n- **输出共性**：所有模型都只支持**文本输出**，均不支持图片、视频输出。  \n\n\n### 3. 筛选逻辑（业务场景参考）  \n- 若业务需要**处理图片/视频输入**（如多模态内容理解），仅 `Doubao-Seed-1.8` 可选。  \n- 若业务仅需**文本输入+文本输出**（如文案生成、问答），三个模型均可考虑，但 `Doubao-Seed-1.8` 额外支持图片/视频输入（未来可扩展多模态场景）。  \n\n\n通过表格可快速匹配“输入类型（文本/图片/视频）”和“输出类型（文本/图片/视频）”的业务需求，选择支持对应能力的模型。', type='output_text', logprobs=None)]
+------------------------------------------------------------
+
+============================================================
+Doubao Vision Model Test Success!
+============================================================

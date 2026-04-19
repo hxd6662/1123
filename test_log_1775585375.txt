@@ -1,0 +1,33 @@
+============================================================
+Testing Doubao Vision Model - API Only
+============================================================
+API Key: 8f8f68b5-5c65-41bf-b...
+Base URL: https://ark.cn-beijing.volces.com/api/v3
+Model: doubao-seed-1-6-vision-250815
+
+Step 1: Importing OpenAI...
+   OK
+Step 2: Creating client...
+   OK
+
+Step 3: Testing text-only query...
+   Response received!
+
+============================================================
+ERROR
+============================================================
+Type: UnicodeEncodeError
+Message: 'gbk' codec can't encode character '\U0001f60a' in position 405: illegal multibyte sequence
+
+Stack trace:
+------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\hxd\OneDrive\Desktop\learning_platform\test_model_only.py", line 49, in <module>
+    log(str(response))
+    ~~~^^^^^^^^^^^^^^^
+  File "C:\Users\hxd\OneDrive\Desktop\learning_platform\test_model_only.py", line 17, in log
+    print(msg)
+    ~~~~~^^^^^
+UnicodeEncodeError: 'gbk' codec can't encode character '\U0001f60a' in position 405: illegal multibyte sequence
+
+------------------------------------------------------------
